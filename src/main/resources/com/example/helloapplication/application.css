@@ -1,0 +1,7 @@
+.root{
+    -fx-background-color: black; // This is for styling backgorund
+}
+
+#ScenePane{
+    -fx-background-color: black;
+}
