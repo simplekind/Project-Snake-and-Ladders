@@ -4,12 +4,12 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-//
 public class Block {
     private int currX ;
     private int currY;
     private int nextX;
     private int nextY;
+    Block nextBlock ;
     private Rectangle r ;
 
     public Block(int currX, int currY, int nextX, int nextY, Rectangle r) {
@@ -20,6 +20,7 @@ public class Block {
         this.r = r;
     }
 
+    public Block(){}
 
     public int getCurrX() {
         return this.currX;
@@ -86,6 +87,19 @@ public class Block {
         return this;
     }
 
+
+    public Block getNextBlock() {
+        return this.nextBlock;
+    }
+
+    public void setNextBlock(Block nextBlock) {
+        this.nextBlock = nextBlock;
+    }
+
+    public Block nextBlock(Block nextBlock) {
+        setNextBlock(nextBlock);
+        return this;
+    }
 
     @Override
     public String toString() {
