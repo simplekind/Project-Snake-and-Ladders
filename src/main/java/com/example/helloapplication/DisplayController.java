@@ -267,7 +267,7 @@ class secondsTask extends TimerTask {
     public void run() {
         this.seconds++ ;
         System.out.println("this.seconds = "+this.seconds);
-        if(this.seconds==28){
+        if(this.seconds==30){
             try {
                 this.seconds = 0 ;
                 this.displayController.getRoll();

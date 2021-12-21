@@ -1,5 +1,5 @@
 .root{
-    -fx-background-color: linear-gradient(to right , #000000 30%, #ff0900 45%, #000000 70%); // This is for styling backgorund
+    -fx-background-color: linear-gradient(to right , #000000 30%, rgba(255, 9, 0, 0.68) 45%, #000000 70%); // This is for styling backgorund
 }
 
 #ScenePane{
