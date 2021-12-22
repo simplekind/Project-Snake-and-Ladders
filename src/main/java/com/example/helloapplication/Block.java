@@ -1,7 +1,4 @@
 package com.example.helloapplication;
-import javafx.fxml.FXML;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class Block {
@@ -9,7 +6,7 @@ public class Block {
     private int currY;
     private int nextX;
     private int nextY;
-    Block nextBlock ;
+    private Block nextBlock ;
     private Rectangle r ;
 
     public Block(int currX, int currY, int nextX, int nextY, Rectangle r) {

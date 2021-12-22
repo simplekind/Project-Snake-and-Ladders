@@ -16,19 +16,12 @@ public class SceneController {
 
     private Stage stage;
     private Scene scene;
-    private Parent root;
-
-    @FXML
-    ImageView image;
 
     public void StartGame(ActionEvent e) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-//        image.setImage(new Image(getClass().getResourceAsStream("HomePage.png")));
         Parent root =  loader.load(getClass().getResource("PlayerFinder.fxml")) ;
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
-//        String css = this.getClass().getResource("application.css").toExternalForm() ;
-//        scene.getStylesheets().add(css);
         stage.setScene(scene);
         stage.show();
     }

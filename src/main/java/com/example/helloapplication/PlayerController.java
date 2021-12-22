@@ -1,24 +1,10 @@
 package com.example.helloapplication;
 
 import javafx.animation.*;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Popup;
-import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import java.io.IOException;
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class PlayerController {
 
@@ -26,10 +12,10 @@ public class PlayerController {
     private int roll ;
 
     @FXML
-    ImageView boardImgView;
+    private ImageView boardImgView;
 
     @FXML
-    ImageView winnerView;
+    private ImageView winnerView;
 
     public PlayerController(Block grid [][],ImageView boardImgView, ImageView winnerView ) {
         this.grid = grid ;
@@ -38,7 +24,6 @@ public class PlayerController {
     }
 
     public void getMove(Player p){
-//        System.out.println("getMove Player 1 = "+p);
         TranslateTransition translateTransition = new TranslateTransition() ;
         TranslateTransition translateTransition1 = new TranslateTransition() ;
         TranslateTransition translate = new TranslateTransition();
@@ -61,10 +46,6 @@ public class PlayerController {
         translate.setByY(p.getCurrBlock().getCurrY() - p.getCurrBlock().getNextY());
         System.out.println(p.getC().getCenterY());
 
-
-//        translateTransition.setAutoReverse(true);
-//        translateTransition1.setAutoReverse(true);
-
         System.out.println("p.getCurrBlock().getNextX() = "+ p.getCurrBlock().getNextX());
         System.out.println("p.getCurrBlock().getNextX() = "+ p.getC().getTranslateZ());
         System.out.println("p.getCurrBlock().getNextY() = "+ p.getCurrBlock().getNextY());
@@ -78,7 +59,7 @@ public class PlayerController {
         translateTransition.play();
         translateTransition1.play();
         this.roll--;
-//        System.out.println(p.getCurrBlock().getCurrY() + " || || "+ p.getCurrBlock().getCurrX());
+
         if(p.getCurrBlock().getCurrY()==450 && p.getCurrBlock().getCurrX()==0){
             if(p.getBoxState()==0){
                 System.out.println("Player 1 Won!");
@@ -91,11 +72,6 @@ public class PlayerController {
             }
             return;
         }
-//        if(roll==0){
-//            Timer timer = new Timer();
-//            TimerTask task = new MoveTask(p,this.grid);
-//            timer.scheduleAtFixedRate(task,800,800);
-//        }
     }
     public void winner(){
         FadeTransition fadeTransition = new FadeTransition(Duration.millis(1000),boardImgView);

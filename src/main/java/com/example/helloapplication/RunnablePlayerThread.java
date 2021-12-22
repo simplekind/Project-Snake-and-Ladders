@@ -1,18 +1,15 @@
 package com.example.helloapplication;
-
 import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.util.Duration;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class RunnablePlayerThread extends Thread {
 
-    Player currPlayer ;
+    private Player currPlayer ;
     private int roll ;
-    PlayerController playerController ;
-    Thread threadDiceAnimation ;
+    private PlayerController playerController ;
+    private Thread threadDiceAnimation ;
 
     public RunnablePlayerThread(Player currPlayer,int roll,PlayerController playerController, Thread threadDiceAnimation) {
         this.currPlayer = currPlayer ;
@@ -23,12 +20,6 @@ public class RunnablePlayerThread extends Thread {
 
     @Override
     public void run(){
-//        try {
-//            currPlayer.setActive();
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
         if(currPlayer.getC().getTranslateX()==0 && currPlayer.getC().getTranslateY() ==0){
             if(roll== 1 || roll ==6 || roll>6){
                 try {
@@ -39,7 +30,6 @@ public class RunnablePlayerThread extends Thread {
                 TranslateTransition translate = new TranslateTransition();
                 translate.setNode(currPlayer.getC());
                 translate.setDuration(Duration.millis(200));
-//                translate.setDelay(Duration.millis(500));
                 translate.setByY(-50);
                 translate.play();
                 if(roll>=6){
@@ -68,7 +58,6 @@ public class RunnablePlayerThread extends Thread {
     }
 
     public void move(Player player,int roll){
-//        System.out.println("move Player 1 = "+p1)
         playerController.setRoll(roll);
         Timer timer = new Timer() ;
         final int[] counter = {1};
@@ -78,9 +67,6 @@ public class RunnablePlayerThread extends Thread {
             if(roll==0){
                 currPlayer.setOtherActive();
             }
-//                System.out.println("    getCurrBlock().getCurrY() = "+player.getCurrBlock().getCurrY());
-//                System.out.println("    roll = "+roll);
-//                System.out.println("    player.getCurrX()/50 = "+player.getCurrX()/50);
             if (counter[0] <= roll) {
                     player.setActive();
                     counter[0]++;
@@ -93,7 +79,6 @@ public class RunnablePlayerThread extends Thread {
                 }
             }
         };
-
         timer.scheduleAtFixedRate(task,1000,500);
     }
 }

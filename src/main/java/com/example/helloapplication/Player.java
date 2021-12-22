@@ -4,19 +4,18 @@ import javafx.fxml.FXML;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
-//
 public class Player {
     private int currX ;
     private int currY;
     private int prevX=0;
     private int prevY=0;
     private int boxState ;
-    Circle c ;
-    Block currBlock ;
+    private Circle c ;
+    private Block currBlock ;
     @FXML
-    Rectangle Player1BoxContainer ;
+    private Rectangle Player1BoxContainer ;
     @FXML
-    Rectangle Player2BoxContainer ;
+    private Rectangle Player2BoxContainer ;
 
     public Player(int currX, int currY, Circle c, Rectangle Player1BoxContainer, Rectangle Player2BoxContainer,int boxContainerActive) {
         this.currX = currX;
@@ -132,13 +131,13 @@ public class Player {
                 "}";
     }
 }
-
+// interface
 class BoxRunnable implements Runnable{
-    int boxState ;
+    private int boxState ;
     @FXML
-    Rectangle Player1BoxContainer;
+    private Rectangle Player1BoxContainer;
     @FXML
-    Rectangle Player2BoxContainer ;
+    private Rectangle Player2BoxContainer ;
     BoxRunnable(int boxState , Rectangle Player1BoxContainer, Rectangle Player2BoxContainer){
         this.boxState=boxState;
         this.Player1BoxContainer=Player1BoxContainer;
@@ -147,16 +146,11 @@ class BoxRunnable implements Runnable{
     @Override
     public void run() {
         if(boxState==0){
-//            this.Player1BoxContainer.toFront();
-//            this.Player2BoxContainer.toBack();
             this.Player2BoxContainer.toFront();
             this.Player1BoxContainer.toBack();
         }else{
             this.Player1BoxContainer.toFront();
             this.Player2BoxContainer.toBack();
-
-//            this.Player2BoxContainer.toFront();
-//            this.Player1BoxContainer.toBack();
         }
     }
 }

@@ -7,11 +7,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MoveTask extends TimerTask {
-    Player p;
-    Block currBlock ;
-    Block nxtBlock ;
-    Block [][] grid ;
-    Timer timer2 ;
+    private Player p;
+    private Block [][] grid ;
+    private Timer timer2 ;
 
     public MoveTask(Player p, Block [][] grid, Timer timer2 ){
         this.p=p;
@@ -32,7 +30,6 @@ public class MoveTask extends TimerTask {
         translate.setNode(p.getC());
         translateTransition.setNode(p.getC());
         translateTransition1.setNode(p.getC());
-//            translate.setDelay(Duration.millis(1000));
         translate.setDuration(Duration.millis(500));
 
         translateTransition.setDuration(Duration.millis(250));
@@ -56,7 +53,6 @@ public class MoveTask extends TimerTask {
         System.out.println("p.getCurrBlock().getNextX() = "+ nxtBlock.getCurrX());
         System.out.println("p.getCurrBlock().getNextY() = "+ nxtBlock.getCurrY());
         p.setCurrBlock(this.grid[(nxtBlock.getCurrY())/50][(nxtBlock.getCurrX())/50]);
-//        p.setOtherActive();
         translate.play();
         translateTransition.play();
         translateTransition1.play();
@@ -65,7 +61,7 @@ public class MoveTask extends TimerTask {
     }
 
     public void moveOnfurther(Player p){
-        // For ladders
+        // Now for ladders
         if(p.getCurrBlock()==grid[0][1]){
             this.getMove(p,grid[0][1],grid[2][0],1);
         }else if (p.getCurrBlock()== grid[0][5]){
@@ -87,6 +83,7 @@ public class MoveTask extends TimerTask {
         }else if (p.getCurrBlock()== grid[8][4]){
             this.getMove(p,grid[8][4],grid[9][3],1);
         }
+
         // Now for snake bites
         else if (p.getCurrBlock()== grid[2][2]){
             this.getMove(p,grid[2][2],grid[0][4],1);
