@@ -1,0 +1,281 @@
+@startuml
+
+title __HELLOAPPLICATION's Class Diagram__\n
+
+  namespace  {
+    namespace pplication {
+      class application.Controller {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.Block {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.Block {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.BoxRunnable {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.BoxRunnable {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.DiceController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.DiceController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.DisplayController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.DisplayController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.HelloApplication {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.HelloApplication {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.MoveTask {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.MoveTask {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.Player {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.Player {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.PlayerController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.PlayerController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.RunnablePlayerThread {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.RunnablePlayerThread {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.SceneController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.SceneController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.SceneController2 {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.SceneController2 {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.ThreadDiceAnimation {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.ThreadDiceAnimation {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.WinnerSceneController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.WinnerSceneController {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.secondsTask {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.secondsTask {
+      }
+    }
+  }
+  
+
+  com.example.helloapplication.Block o-- com.example.helloapplication.Block : nextBlock
+  com.example.helloapplication.BoxRunnable .up.|> java.lang.Runnable
+  com.example.helloapplication.BoxRunnable .up.|> java.lang.Runnable
+  com.example.helloapplication.DiceController o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.DiceController o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.DiceController : diceController
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.Player : p1
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.Player : p2
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.DiceController : diceController
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.Player : p1
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.Player : p2
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.HelloApplication -up-|> javafx.application.Application
+  com.example.helloapplication.HelloApplication -up-|> javafx.application.Application
+  com.example.helloapplication.MoveTask -up-|> java.util.TimerTask
+  com.example.helloapplication.MoveTask o-- com.example.helloapplication.Player : p
+  com.example.helloapplication.MoveTask -up-|> java.util.TimerTask
+  com.example.helloapplication.MoveTask o-- com.example.helloapplication.Player : p
+  com.example.helloapplication.Player o-- com.example.helloapplication.Block : currBlock
+  com.example.helloapplication.Player o-- com.example.helloapplication.Block : currBlock
+  com.example.helloapplication.RunnablePlayerThread o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.RunnablePlayerThread o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.RunnablePlayerThread o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.RunnablePlayerThread o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.DiceController : diceController
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.DiceController : diceController
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.secondsTask -up-|> java.util.TimerTask
+  com.example.helloapplication.secondsTask o-- com.example.helloapplication.DisplayController : displayController
+  com.example.helloapplication.secondsTask -up-|> java.util.TimerTask
+  com.example.helloapplication.secondsTask o-- com.example.helloapplication.DisplayController : displayController
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

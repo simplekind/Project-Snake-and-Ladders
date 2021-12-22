@@ -1,0 +1,230 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": ""
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false // root node is included
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.helloapplication.DisplayController"
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1656891714 { 
+   	label=helloapplication
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   Block403406577[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Block</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   currX: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currY: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   nextBlock: Block [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nextX: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nextY: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   r: Rectangle [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ currX(currX: int): Block</TD></TR>
+<TR><TD ALIGN="LEFT" >+ currY(currY: int): Block</TD></TR>
+<TR><TD ALIGN="LEFT" >+ nextBlock(nextBlock: Block): Block</TD></TR>
+<TR><TD ALIGN="LEFT" >+ nextX(nextX: int): Block</TD></TR>
+<TR><TD ALIGN="LEFT" >+ nextY(nextY: int): Block</TD></TR>
+<TR><TD ALIGN="LEFT" >+ r(r: Rectangle): Block</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DiceController403406577[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DiceController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   currPlayer: Player [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   dice: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   diceImages: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   loading: ImageView [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getRoll(event: ActionEvent): int</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DisplayController403406577[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DisplayController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   Player1: Circle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   Player1BoxContainer: Rectangle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   Player2: Circle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   Player2BoxContainer: Rectangle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   boardImgView: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   chance: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   dice: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   diceController: DiceController [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   diceImages: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   grid: Block[][] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   loading: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   p1: Player [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   p2: Player [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   pane1: Pane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   player1Img: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   player2Img: ImageView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   playerController: PlayerController [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getRoll(event: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Player403406577[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Player</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   Player1BoxContainer: Rectangle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   Player2BoxContainer: Rectangle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   boxState: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   c: Circle [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   currBlock: Block [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currX: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   currY: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   prevX: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   prevY: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ c(c: Circle): Player</TD></TR>
+<TR><TD ALIGN="LEFT" >+ currBlock(currBlock: Block): Player</TD></TR>
+<TR><TD ALIGN="LEFT" >+ currX(currX: int): Player</TD></TR>
+<TR><TD ALIGN="LEFT" >+ currY(currY: int): Player</TD></TR>
+<TR><TD ALIGN="LEFT" >+ prevX(prevX: int): Player</TD></TR>
+<TR><TD ALIGN="LEFT" >+ prevY(prevY: int): Player</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+PlayerController403406577[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PlayerController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   grid: Block[][] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   roll: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getMove(p: Player)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+DiceController403406577 -> Player403406577[label="currPlayer
+[0..1]"];
+DisplayController403406577 -> Block403406577[label="grid
+[0..*]"];
+DisplayController403406577 -> DiceController403406577[label="diceController
+[0..1]"];
+DisplayController403406577 -> Player403406577[label="p1
+[0..1]"];
+DisplayController403406577 -> Player403406577[label="p2
+[0..1]"];
+DisplayController403406577 -> PlayerController403406577[label="playerController
+[0..1]"];
+Player403406577 -> Block403406577[label="currBlock
+[0..1]"];
+PlayerController403406577 -> Block403406577[label="grid
+[0..*]"];
+    
+}
+@enduml

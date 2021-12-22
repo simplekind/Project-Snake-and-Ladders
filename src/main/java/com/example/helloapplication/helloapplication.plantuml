@@ -1,0 +1,283 @@
+@startuml
+
+title __HELLOAPPLICATION's Class Diagram__\n
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.Block {
+          - currX : int
+          - currY : int
+          - nextX : int
+          - nextY : int
+          - r : Rectangle
+          + Block()
+          + Block()
+          + currX()
+          + currY()
+          + getCurrX()
+          + getCurrY()
+          + getNextBlock()
+          + getNextX()
+          + getNextY()
+          + getR()
+          + nextBlock()
+          + nextX()
+          + nextY()
+          + r()
+          + setCurrX()
+          + setCurrY()
+          + setNextBlock()
+          + setNextX()
+          + setNextY()
+          + setR()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.BoxRunnable {
+          - Player1BoxContainer : Rectangle
+          - Player2BoxContainer : Rectangle
+          - boxState : int
+          + run()
+          ~ BoxRunnable()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.DiceController {
+          - arrow : ImageView
+          - dice : Button
+          - diceImages : ImageView
+          - loading : ImageView
+          + DiceController()
+          + getRoll()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.DisplayController {
+          - Player1 : Circle
+          - Player1BoxContainer : Rectangle
+          - Player2 : Circle
+          - Player2BoxContainer : Rectangle
+          - arrow : ImageView
+          - boardImgView : ImageView
+          - chance : int
+          - dice : Button
+          - diceAutoTask : TimerTask
+          - diceImages : ImageView
+          - grid : Block[][]
+          - loading : ImageView
+          - pane1 : Pane
+          - player1Img : ImageView
+          - player2Img : ImageView
+          - winnerView : ImageView
+          + getRoll()
+          + getRoll()
+          + initialize()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.HelloApplication {
+          + LogOut()
+          {static} + main()
+          + start()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.MoveTask {
+          - grid : Block[][]
+          - timer2 : Timer
+          + MoveTask()
+          + getMove()
+          + moveOnfurther()
+          + run()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.Player {
+          - Player1BoxContainer : Rectangle
+          - Player2BoxContainer : Rectangle
+          - boxState : int
+          - c : Circle
+          - currX : int
+          - currY : int
+          - prevX : int
+          - prevY : int
+          + Player()
+          + c()
+          + currBlock()
+          + currX()
+          + currY()
+          + getBoxState()
+          + getC()
+          + getCurrBlock()
+          + getCurrX()
+          + getCurrY()
+          + getPrevX()
+          + getPrevY()
+          + prevX()
+          + prevY()
+          + setActive()
+          + setC()
+          + setCurrBlock()
+          + setCurrX()
+          + setCurrY()
+          + setOtherActive()
+          + setPrevX()
+          + setPrevY()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.PlayerController {
+          - boardImgView : ImageView
+          - grid : Block[][]
+          - roll : int
+          - winnerView : ImageView
+          + PlayerController()
+          + getGrid()
+          + getMove()
+          + getRoll()
+          + setRoll()
+          + winner()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.RunnablePlayerThread {
+          - roll : int
+          - threadDiceAnimation : Thread
+          + RunnablePlayerThread()
+          + move()
+          + run()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.SceneController {
+          - scene : Scene
+          - stage : Stage
+          + StartGame()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.SceneController2 {
+          - loader : FXMLLoader
+          - root : BorderPane
+          - scene : Scene
+          - stage : Stage
+          + HomePage()
+          + startGame()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.ThreadDiceAnimation {
+          - event : ActionEvent
+          - roll : int
+          + ThreadDiceAnimation()
+          + ThreadDiceAnimation()
+          + getRoll()
+          + run()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.WinnerSceneController {
+          - label1 : Label
+          - label2 : Label
+          - loader : FXMLLoader
+          - scene : Scene
+          - stage : Stage
+          + Menu()
+          + PlayAgain()
+          + winning()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.helloapplication {
+      class com.example.helloapplication.secondsTask {
+          - seconds : int
+          + getSeconds()
+          + run()
+          + setSeconds()
+          ~ secondsTask()
+      }
+    }
+  }
+  
+
+  com.example.helloapplication.Block o-- com.example.helloapplication.Block : nextBlock
+  com.example.helloapplication.BoxRunnable .up.|> java.lang.Runnable
+  com.example.helloapplication.DiceController o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.DiceController : diceController
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.Player : p1
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.Player : p2
+  com.example.helloapplication.DisplayController o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.HelloApplication -up-|> javafx.application.Application
+  com.example.helloapplication.MoveTask -up-|> java.util.TimerTask
+  com.example.helloapplication.MoveTask o-- com.example.helloapplication.Player : p
+  com.example.helloapplication.Player o-- com.example.helloapplication.Block : currBlock
+  com.example.helloapplication.RunnablePlayerThread o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.RunnablePlayerThread o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.Player : currPlayer
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.DiceController : diceController
+  com.example.helloapplication.ThreadDiceAnimation o-- com.example.helloapplication.PlayerController : playerController
+  com.example.helloapplication.secondsTask -up-|> java.util.TimerTask
+  com.example.helloapplication.secondsTask o-- com.example.helloapplication.DisplayController : displayController
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
