@@ -34,14 +34,14 @@ config=StructureConfiguration;
     "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
     "removeByClassName": "",
     "cutMappings": false,
-    "cutEnum": false,
+    "cutEnum": true,
     "cutTests": true,
     "cutClient": true,
-    "cutDataAccess": false,
-    "cutInterfaceStructures": false,
-    "cutDataStructures": false,
-    "cutGetterAndSetter": false,
-    "cutConstructors": false
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
   },
   "graphTraversal": {
     "forwardDepth": 3,
