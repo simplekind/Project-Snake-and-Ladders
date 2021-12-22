@@ -194,7 +194,7 @@ public class DisplayController {
             // We will let the thread sleep until our move is done
             diceThread.run();
             int roll = ((ThreadDiceAnimation) diceThread).getRoll(); // Polymorphism
-            if(p1.getC().getTranslateX()!=0 && p1.getC().getTranslateY()!=0) ((secondsTask) this.diceAutoTask).seconds = -roll ;
+            if(p1.getC().getTranslateX()!=0 && p1.getC().getTranslateY()!=0) ((secondsTask) this.diceAutoTask).seconds = -roll+3 ;
             else ((secondsTask) this.diceAutoTask).seconds = 0 ;
             System.out.println(roll);
             System.out.println("getRoll Player 1 "+p1);
@@ -210,7 +210,7 @@ public class DisplayController {
             // We will let the thread sleep until our move is done
             diceThread.run();
             int roll = ((ThreadDiceAnimation) diceThread).getRoll(); // Polymorphism
-            if(p1.getC().getTranslateX()!=0 && p1.getC().getTranslateY()!=0) ((secondsTask) this.diceAutoTask).seconds = -roll ;
+            if(p1.getC().getTranslateX()!=0 && p1.getC().getTranslateY()!=0) ((secondsTask) this.diceAutoTask).seconds = -roll+3 ;
             else ((secondsTask) this.diceAutoTask).seconds = 0 ;
             System.out.println(roll);
             System.out.println("getRoll Player 2 "+p2);
@@ -231,7 +231,7 @@ public class DisplayController {
             // We will let the thread sleep until our move is done
             diceThread.run();
             int roll = ((ThreadDiceAnimation) diceThread).getRoll(); // Polymorphism
-            if(p1.getC().getTranslateX()!=0 && p1.getC().getTranslateY()!=0) ((secondsTask) this.diceAutoTask).seconds = -roll ;
+            if(p1.getC().getTranslateX()!=0 && p1.getC().getTranslateY()!=0) ((secondsTask) this.diceAutoTask).seconds = -roll+3 ;
             else ((secondsTask) this.diceAutoTask).seconds = 0 ;
             System.out.println(roll);
             System.out.println("getRoll Player 1 "+p1);
@@ -247,7 +247,7 @@ public class DisplayController {
             // We will let the thread sleep until our move is done
             diceThread.run();
             int roll = ((ThreadDiceAnimation) diceThread).getRoll(); // Polymorphism
-            if(p1.getC().getTranslateX()!=0 && p1.getC().getTranslateY()!=0) ((secondsTask) this.diceAutoTask).seconds = -roll ;
+            if(p1.getC().getTranslateX()!=0 && p1.getC().getTranslateY()!=0) ((secondsTask) this.diceAutoTask).seconds = -roll+3 ;
             else ((secondsTask) this.diceAutoTask).seconds = 0 ;
             System.out.println(roll);
             System.out.println("getRoll Player 2 "+p2);

@@ -10,10 +10,10 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@STARTGAME.png" />
+            <Image url="@startmenu.png" />
          </image>
       </ImageView>
-      <Button layoutX="165.0" layoutY="257.0" mnemonicParsing="false" onAction="#StartGame" prefHeight="30.0" prefWidth="83.0" text="Offline Multiplayer">
+      <Button layoutX="189.0" layoutY="185.0" mnemonicParsing="false" onAction="#StartGame" opacity="0.0" prefHeight="30.0" prefWidth="83.0" text="Offline Multiplayer">
          <font>
             <Font size="8.0" />
          </font>
