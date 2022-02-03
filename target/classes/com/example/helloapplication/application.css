@@ -1,0 +1,21 @@
+.root{
+    -fx-background-color: linear-gradient(to right , #000000 30%, rgba(255, 9, 0, 0.68) 45%, #000000 70%); // This is for styling backgorund
+}
+
+#ScenePane{
+    -fx-background-color: black;
+}
+
+#Player1BoxContainer,#Player2BoxContainer{
+    -fx-fill: black;
+    -fx-opacity: 0.8;
+}
+
+#Player1Txt , #Player2Txt {
+    -fx-text-fill: white;
+    -fx-font-family: Consolas ;
+}
+
+#dice{
+    -fx-background-color: transparent ; -fx-text-fill: transparent;
+}

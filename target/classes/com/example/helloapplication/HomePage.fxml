@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.helloapplication.SceneController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@startmenu.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="189.0" layoutY="185.0" mnemonicParsing="false" onAction="#StartGame" opacity="0.0" prefHeight="30.0" prefWidth="83.0" text="Offline Multiplayer">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
